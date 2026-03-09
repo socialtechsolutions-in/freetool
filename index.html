@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FreeToolsHub - Free online text, generator, writing, social and utility tools." />
+  <meta name="keywords" content="free tools, word counter, password generator, hashtag generator, qr code" />
+  <meta name="robots" content="index,follow" />
+  <title>FreeToolsHub | Single Page</title>
+  <style>
+    :root{
+      --bg:#f6f9fc; --card:#fff; --txt:#0f172a; --muted:#475569;
+      --primary:#0f766e; --border:#d9e3ef; --shadow:0 10px 24px rgba(15,23,42,.08);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Segoe UI,Tahoma,Verdana,sans-serif;color:var(--txt);background:radial-gradient(circle at top right,#e4f6f3 0,var(--bg) 45%)}
+    .container{width:min(1100px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:#ffffffea;border-bottom:1px solid var(--border);backdrop-filter:blur(6px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;min-height:68px}
+    .brand{font-weight:800;font-size:1.3rem;text-decoration:none;color:var(--txt)}
+    nav a{margin-left:16px;text-decoration:none;color:var(--muted);font-weight:600}
+    nav a:hover{color:var(--primary)}
+    section{padding:56px 0}
+    .hero{text-align:center;padding:72px 0 50px}
+    .hero h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:8px}
+    .hero p{max-width:680px;margin:0 auto 18px;color:var(--muted)}
+    .search{max-width:580px;margin:auto}
+    input,textarea,button{font:inherit}
+    input,textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:#fff}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+    .card,.tool{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow)}
+    .card{padding:18px;text-align:center;font-weight:700}
+    .tool-list .card{cursor:pointer;transition:.2s transform}
+    .tool-list .card:hover{transform:translateY(-3px)}
+    .ad{padding:18px;border:2px dashed #b8c8da;border-radius:12px;color:#64748b;background:#f8fbff;text-align:center}
+    h2{font-size:clamp(1.3rem,2.2vw,1.8rem);margin-bottom:16px}
+    .tools-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+    .tool{padding:16px}
+    .tool h3{margin-bottom:8px}
+    .tool p{color:var(--muted);font-size:.95rem;margin-bottom:12px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .checks{display:flex;gap:12px;flex-wrap:wrap;margin:8px 0}
+    .checks label{display:flex;gap:6px;align-items:center;color:var(--muted);font-size:.9rem}
+    .btn{margin-top:10px;background:var(--primary);color:#fff;border:0;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+    .result{margin-top:10px;padding:10px;border:1px dashed #bdd8d4;border-radius:10px;background:#f6fbfa;min-height:46px;white-space:pre-wrap}
+    footer{margin-top:40px;padding:26px 0;border-top:1px solid var(--border);background:#f1f7fd;color:#64748b;text-align:center}
+    @media(max-width:700px){.row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand">FreeToolsHub</a>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#popular">Popular</a>
+        <a href="#tools">Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <h1>FreeToolsHub</h1>
+        <p>Fast, simple, and free online tools for text, generators, writing, social media, and utility tasks.</p>
+        <div class="search">
+          <input id="searchTools" type="search" placeholder="Search tools..." />
+        </div>
+      </div>
+    </section>
+
+    <section id="categories">
+      <div class="container">
+        <h2>Tool Categories</h2>
+        <div class="grid">
+          <div class="card">Text Tools</div>
+          <div class="card">Generator Tools</div>
+          <div class="card">Writing Tools</div>
+          <div class="card">Social Media Tools</div>
+          <div class="card">Utility Tools</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="popular">
+      <div class="container">
+        <h2>Popular Tools</h2>
+        <div class="grid tool-list" id="toolCards">
+          <div class="card" data-name="Word Counter">Word Counter</div>
+          <div class="card" data-name="Password Generator">Password Generator</div>
+          <div class="card" data-name="Username Generator">Username Generator</div>
+          <div class="card" data-name="Instagram Bio Generator">Instagram Bio Generator</div>
+          <div class="card" data-name="Resume Builder">Resume Builder</div>
+          <div class="card" data-name="Hashtag Generator">Hashtag Generator</div>
+          <div class="card" data-name="QR Code Generator">QR Code Generator</div>
+          <div class="card" data-name="Random Number Generator">Random Number Generator</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container"><div class="ad">Ad Space (Google AdSense Placeholder)</div></div>
+    </section>
+
+    <section id="tools">
+      <div class="container">
+        <h2>All Tools (Single Page)</h2>
+        <div class="tools-wrap">
+
+          <article class="tool">
+            <h3>Word Counter</h3><p>Count words and characters instantly.</p>
+            <textarea id="wcInput" rows="5" placeholder="Type text..."></textarea>
+            <button class="btn" id="wcBtn">Count</button>
+            <div class="result" id="wcResult"></div>
+          </article>
+
+          <article class="tool">
+            <h3>Password Generator</h3><p>Create secure passwords quickly.</p>
+            <input id="pwLength" type="number" min="6" max="64" value="12" />
+            <div class="checks">
+              <label><input id="pwUpper" type="checkbox" checked /> Uppercase</label>
+              <label><input id="pwNumber" type="checkbox" checked /> Numbers</label>
+              <label><input id="pwSymbol" type="checkbox" checked /> Symbols</label>
+            </div>
+            <button class="btn" id="pwBtn">Generate</button>
+            <div class="result" id="pwResult"></div>
+          </article>
+
+          <article class="tool">
+            <h3>Username Generator</h3><p>Generate creative usernames.</p>
+            <div class="row">
+              <input id="unName" placeholder="Name" />
+              <input id="unKeyword" placeholder="Keyword" />
+            </div>
+            <button class="btn" id="unBtn">Generate</button>
+            <div class="result" id="unResult"></div>
+          </article>
+
+          <article class="tool">
+            <h3>Instagram Bio Generator</h3><p>Create short bio ideas.</p>
+            <div class="row">
+              <input id="igNiche" placeholder="Niche" />
+              <input id="igTone" placeholder="Tone" />
+            </div>
+            <button class="btn" id="igBtn">Generate</button>
+            <div class="result" id="igResult"></div>
+          </article>
+
+          <article class="tool">
+            <h3>Resume Builder</h3><p>Generate a simple summary.</p>
+            <input id="rbName" placeholder="Full Name" />
+            <input id="rbRole" placeholder="Job Role" style="margin-top:8px" />
+            <input id="rbSkills" placeholder="Skills" style="margin-top:8px" />
+            <textarea id="rbExp" rows="4" placeholder="Experience..." style="margin-top:8px"></textarea>
+            <button class="btn" id="rbBtn">Build</button>
+            <div class="result" id="rbResult"></div>
+          </article>
+
+          <article class="tool">
+            <h3>Hashtag Generator</h3><p>Generate hashtags from topic.</p>
+            <div class="row">
+              <input id="htTopic" placeholder="Topic" />
+              <input id="htCount" type="number" min="5" max="30" value="10" />
+            </div>
+            <button class="btn" id="htBtn">Generate</button>
+            <div class="result" id="htResult"></div>
+          </article>
+
+          <article class="tool">
+            <h3>QR Code Generator</h3><p>Generate QR from URL/text.</p>
+            <input id="qrInput" placeholder="https://example.com" />
+            <button class="btn" id="qrBtn">Generate</button>
+            <div class="result" id="qrResult"></div>
+          </article>
+
+          <article class="tool">
+            <h3>Random Number Generator</h3><p>Generate random number in range.</p>
+            <div class="row">
+              <input id="rnMin" type="number" value="1" />
+              <input id="rnMax" type="number" value="100" />
+            </div>
+            <button class="btn" id="rnBtn">Generate</button>
+            <div class="result" id="rnResult"></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 FreeToolsHub. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const byId = (id) => document.getElementById(id);
+
+    // Search cards
+    const search = byId("searchTools");
+    const cards = [...document.querySelectorAll("#toolCards .card")];
+    search.addEventListener("input", e => {
+      const q = e.target.value.toLowerCase().trim();
+      cards.forEach(c => c.style.display = c.dataset.name.toLowerCase().includes(q) ? "block" : "none");
+    });
+
+    // Word Counter
+    byId("wcBtn").onclick = () => {
+      const t = byId("wcInput").value.trim();
+      const words = t ? t.split(/\s+/).length : 0;
+      byId("wcResult").textContent = `Words: ${words}\nCharacters: ${t.length}`;
+    };
+
+    // Password Generator
+    byId("pwBtn").onclick = () => {
+      const len = Math.min(64, Math.max(6, Number(byId("pwLength").value) || 12));
+      let chars = "abcdefghijklmnopqrstuvwxyz";
+      if (byId("pwUpper").checked) chars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      if (byId("pwNumber").checked) chars += "0123456789";
+      if (byId("pwSymbol").checked) chars += "!@#$%^&*()_+-={}[]<>?";
+      let out = "";
+      for (let i = 0; i < len; i++) out += chars[Math.floor(Math.random() * chars.length)];
+      byId("pwResult").textContent = out;
+    };
+
+    // Username
+    byId("unBtn").onclick = () => {
+      const n = (byId("unName").value || "user").replace(/\s+/g, "").toLowerCase();
+      const k = (byId("unKeyword").value || "hub").replace(/\s+/g, "").toLowerCase();
+      byId("unResult").textContent = `${n}_${k}${Math.floor(100 + Math.random() * 900)}`;
+    };
+
+    // IG Bio
+    byId("igBtn").onclick = () => {
+      const niche = byId("igNiche").value || "Creator";
+      const tone = byId("igTone").value || "clean";
+      byId("igResult").textContent = `${niche} | ${tone} vibes\nSharing value daily\nDM for collaborations`;
+    };
+
+    // Resume
+    byId("rbBtn").onclick = () => {
+      byId("rbResult").textContent =
+`Name: ${byId("rbName").value || "Your Name"}
+Role: ${byId("rbRole").value || "Professional"}
+Skills: ${byId("rbSkills").value || "Communication, Teamwork"}
+Summary: ${byId("rbExp").value || "Add your key achievements and experience."}`;
+    };
+
+    // Hashtag
+    byId("htBtn").onclick = () => {
+      const topic = (byId("htTopic").value || "content").replace(/\s+/g, "");
+      const count = Math.min(30, Math.max(5, Number(byId("htCount").value) || 10));
+      const tags = Array.from({length: count}, (_, i) => `#${topic}${i+1}`);
+      byId("htResult").textContent = tags.join(" ");
+    };
+
+    // QR
+    byId("qrBtn").onclick = () => {
+      const val = encodeURIComponent(byId("qrInput").value.trim());
+      byId("qrResult").innerHTML = val
+        ? `<img alt="QR Code" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${val}">`
+        : "Enter text or URL.";
+    };
+
+    // Random
+    byId("rnBtn").onclick = () => {
+      const min = Number(byId("rnMin").value), max = Number(byId("rnMax").value);
+      if (Number.isNaN(min) || Number.isNaN(max) || min > max) return byId("rnResult").textContent = "Invalid range.";
+      byId("rnResult").textContent = `Random Number: ${Math.floor(Math.random()*(max-min+1))+min}`;
+    };
+  </script>
+</body>
+</html>
